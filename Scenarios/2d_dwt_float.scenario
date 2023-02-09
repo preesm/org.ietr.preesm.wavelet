@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+    <flags>
+        <sizesAreInBit/>
+    </flags>
+    <files>
+        <algorithm url="/org.ietr.preesm.wavelet/Algo/2d_dwt_float.pi"/>
+        <architecture url="/org.ietr.preesm.wavelet/Archi/PYNQ.slam"/>
+        <codegenDirectory url="/org.ietr.preesm.wavelet/Code/generated"/>
+    </files>
+    <constraints excelUrl="">
+        <constraintGroup>
+            <operator name="Zynq"/>
+            <task name="2d_dwt_float/Conv_Row_High"/>
+            <task name="2d_dwt_float/Downsample_Row_Low_High"/>
+            <task name="2d_dwt_float/Conv_Col_Low_High"/>
+            <task name="2d_dwt_float/Conv_Col_High_High"/>
+            <task name="2d_dwt_float/Downsample_Col_Low"/>
+            <task name="2d_dwt_float/Conv_Col_Low_Low"/>
+            <task name="2d_dwt_float/Downsample_Row_High_High"/>
+            <task name="2d_dwt_float/Conv_Col_High_Low"/>
+            <task name="2d_dwt_float/Conv_Row_Low"/>
+            <task name="2d_dwt_float/Downsample_Col_High"/>
+            <task name="2d_dwt_float/Downsample_Row_High_Low"/>
+            <task name="2d_dwt_float/Downsample_Row_Low_Low"/>
+            <task name="2d_dwt_float"/>
+        </constraintGroup>
+    </constraints>
+    <timings excelUrl="">
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Conv_Row_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Conv_Row_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Col_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Col_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Row_High_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Row_High_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Row_High_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Row_High_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Row_Low_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Row_Low_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_dwt_float/Downsample_Row_Low_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_dwt_float/Downsample_Row_Low_Low"/>
+        <memcpyspeed opname="FPGA" setuptime="1" timeperunit="0.001"/>
+    </timings>
+    <simuParams>
+        <mainCore/>
+        <mainComNode/>
+        <averageDataSize>1000</averageDataSize>
+        <dataTypes>
+            <dataType name="float" size="32"/>
+        </dataTypes>
+        <specialVertexOperators>
+            <specialVertexOperator path="Zynq"/>
+        </specialVertexOperators>
+    </simuParams>
+    <parameterValues/>
+    <papifyConfigs xmlUrl=""/>
+    <energyConfigs xmlUrl="">
+        <performanceObjective objectiveEPS="0.0"/>
+        <peActorsEnergy/>
+    </energyConfigs>
+</scenario>
