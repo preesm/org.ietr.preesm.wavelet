@@ -1,0 +1,3 @@
+config:
+- {scenario: 2d_dwt_float.scenario, workflow: FPGAanalysis.workflow}
+- {scenario: 2d_idwt_float.scenario, workflow: FPGAanalysis.workflow}
