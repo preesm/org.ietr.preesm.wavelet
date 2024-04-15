@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="parameters" for="graph" id="parameters"/>
+    <key attr.name="variables" for="graph" id="variables"/>
+    <key attr.name="arguments" for="node" id="arguments"/>
+    <key attr.name="name" attr.type="string" for="graph"/>
+    <key attr.name="graph_desc" attr.type="string" for="node"/>
+    <graph edgedefault="directed">
+        <data key="name">2d_wavelet_filter_float</data>
+        <node expr="288" id="HEIGHT" kind="param"/>
+        <node expr="352" id="WIDTH" kind="param"/>
+        <node expr="5" id="FILTER_SIZE" kind="param"/>
+        <node id="DWT" kind="actor">
+            <data key="graph_desc">Algo/2d_dwt_float.pi</data>
+            <port kind="cfg_input" name="HEIGHT"/>
+            <port kind="cfg_input" name="WIDTH"/>
+            <port kind="cfg_input" name="FILTER_SIZE"/>
+            <port annotation="NONE" expr="HEIGHT*WIDTH"
+                kind="input" name="input"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="lowpass_filter"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="highpass_filter"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="output" name="out_Low_Low"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="output" name="out_Low_High"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="output" name="out_High_Low"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="output" name="out_High_High"/>
+        </node>
+        <node id="IDWT" kind="actor">
+            <data key="graph_desc">Algo/2d_idwt_float.pi</data>
+            <port kind="cfg_input" name="HEIGHT"/>
+            <port kind="cfg_input" name="WIDTH"/>
+            <port kind="cfg_input" name="FILTER_SIZE"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="input" name="in_Low_Low"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="input" name="in_Low_High"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="input" name="in_High_Low"/>
+            <port annotation="NONE" expr="(WIDTH/2)*(HEIGHT/2)"
+                kind="input" name="in_High_High"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="lowpass_filter"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="highpass_filter"/>
+            <port annotation="NONE" expr="HEIGHT*WIDTH"
+                kind="output" name="output"/>
+        </node>
+        <node id="input" kind="src">
+            <port annotation="NONE" expr="HEIGHT*WIDTH"
+                kind="output" name="input"/>
+        </node>
+        <node id="lowpass_filter" kind="src">
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="lowpass_filter"/>
+        </node>
+        <node id="highpass_filter" kind="src">
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="highpass_filter"/>
+        </node>
+        <node id="output" kind="snk">
+            <port annotation="NONE" expr="HEIGHT*WIDTH"
+                kind="input" name="output"/>
+        </node>
+        <node id="broadcast_lowpass_filter" kind="broadcast">
+            <port kind="cfg_input" name="FILTER_SIZE"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="input"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="output1"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="output2"/>
+        </node>
+        <node id="broadcast_highpass_filter" kind="broadcast">
+            <port kind="cfg_input" name="FILTER_SIZE"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="input" name="input"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="output1"/>
+            <port annotation="NONE" expr="FILTER_SIZE"
+                kind="output" name="output2"/>
+        </node>
+        <node id="soft_threshold1" kind="actor">
+            <data key="graph_desc">Code/include/filter.hpp</data>
+            <loop isCPPdefinition="true" name="soft_threshold&lt;T>">
+                <param direction="IN" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="src" type="hls::stream&lt;T>"/>
+                <param direction="OUT" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="snk" type="hls::stream&lt;T>"/>
+            </loop>
+            <port annotation="NONE" expr="1" kind="input" name="src"/>
+            <port annotation="NONE" expr="1" kind="output" name="snk"/>
+        </node>
+        <node id="soft_threshold3" kind="actor">
+            <data key="graph_desc">Code/include/filter.hpp</data>
+            <loop isCPPdefinition="true" name="soft_threshold&lt;T>">
+                <param direction="IN" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="src" type="hls::stream&lt;T>"/>
+                <param direction="OUT" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="snk" type="hls::stream&lt;T>"/>
+            </loop>
+            <port annotation="NONE" expr="1" kind="input" name="src"/>
+            <port annotation="NONE" expr="1" kind="output" name="snk"/>
+        </node>
+        <node id="soft_threshold2" kind="actor">
+            <data key="graph_desc">Code/include/filter.hpp</data>
+            <loop isCPPdefinition="true" name="soft_threshold&lt;T>">
+                <param direction="IN" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="src" type="hls::stream&lt;T>"/>
+                <param direction="OUT" isCPPdefinition="true"
+                    isConfig="false" isPassedByReference="true"
+                    name="snk" type="hls::stream&lt;T>"/>
+            </loop>
+            <port annotation="NONE" expr="1" kind="input" name="src"/>
+            <port annotation="NONE" expr="1" kind="output" name="snk"/>
+        </node>
+        <edge kind="fifo" source="DWT" sourceport="out_Low_Low"
+            target="IDWT" targetport="in_Low_Low" type="float"/>
+        <edge kind="fifo" source="input" sourceport="input"
+            target="DWT" targetport="input" type="float"/>
+        <edge kind="fifo" source="IDWT" sourceport="output"
+            target="output" targetport="output" type="float"/>
+        <edge kind="fifo" source="lowpass_filter"
+            sourceport="lowpass_filter"
+            target="broadcast_lowpass_filter" targetport="input" type="float"/>
+        <edge kind="fifo" source="broadcast_lowpass_filter"
+            sourceport="output1" target="DWT"
+            targetport="lowpass_filter" type="float"/>
+        <edge kind="fifo" source="broadcast_lowpass_filter"
+            sourceport="output2" target="IDWT"
+            targetport="lowpass_filter" type="float"/>
+        <edge kind="fifo" source="highpass_filter"
+            sourceport="highpass_filter"
+            target="broadcast_highpass_filter" targetport="input" type="float"/>
+        <edge kind="fifo" source="broadcast_highpass_filter"
+            sourceport="output1" target="DWT"
+            targetport="highpass_filter" type="float"/>
+        <edge kind="fifo" source="broadcast_highpass_filter"
+            sourceport="output2" target="IDWT"
+            targetport="highpass_filter" type="float"/>
+        <edge kind="fifo" source="DWT" sourceport="out_Low_High"
+            target="soft_threshold1" targetport="src" type="float"/>
+        <edge kind="fifo" source="soft_threshold1"
+            sourceport="snk" target="IDWT"
+            targetport="in_Low_High" type="float"/>
+        <edge kind="fifo" source="DWT" sourceport="out_High_Low"
+            target="soft_threshold2" targetport="src" type="float"/>
+        <edge kind="fifo" source="soft_threshold2"
+            sourceport="snk" target="IDWT"
+            targetport="in_High_Low" type="float"/>
+        <edge kind="fifo" source="DWT" sourceport="out_High_High"
+            target="soft_threshold3" targetport="src" type="float"/>
+        <edge kind="fifo" source="soft_threshold3"
+            sourceport="snk" target="IDWT"
+            targetport="in_High_High" type="float"/>
+        <edge kind="dependency" source="HEIGHT" target="input"/>
+        <edge kind="dependency" source="WIDTH" target="input"/>
+        <edge kind="dependency" source="HEIGHT" target="DWT" targetport="HEIGHT"/>
+        <edge kind="dependency" source="WIDTH" target="DWT" targetport="WIDTH"/>
+        <edge kind="dependency" source="FILTER_SIZE" target="highpass_filter"/>
+        <edge kind="dependency" source="FILTER_SIZE" target="lowpass_filter"/>
+        <edge kind="dependency" source="FILTER_SIZE"
+            target="broadcast_highpass_filter" targetport="FILTER_SIZE"/>
+        <edge kind="dependency" source="FILTER_SIZE"
+            target="broadcast_lowpass_filter" targetport="FILTER_SIZE"/>
+        <edge kind="dependency" source="FILTER_SIZE" target="DWT" targetport="FILTER_SIZE"/>
+        <edge kind="dependency" source="FILTER_SIZE"
+            target="IDWT" targetport="FILTER_SIZE"/>
+        <edge kind="dependency" source="HEIGHT" target="IDWT" targetport="HEIGHT"/>
+        <edge kind="dependency" source="WIDTH" target="IDWT" targetport="WIDTH"/>
+        <edge kind="dependency" source="HEIGHT" target="output"/>
+        <edge kind="dependency" source="WIDTH" target="output"/>
+    </graph>
+</graphml>

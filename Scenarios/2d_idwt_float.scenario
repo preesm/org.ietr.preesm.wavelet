@@ -97,25 +97,13 @@
         <mainComNode/>
         <averageDataSize>1000</averageDataSize>
         <dataTypes>
-            <dataType name="ap_fixed&lt;13,11>" size="13"/>
-            <dataType name="ap_fixed&lt;12,10>" size="12"/>
-            <dataType name="ap_fixed&lt;10,9>" size="10"/>
-            <dataType name="ap_fixed&lt;10,8>" size="10"/>
-            <dataType name="ap_fixed&lt;11,9>" size="11"/>
-            <dataType name="ap_fixed&lt;13,10>" size="13"/>
-            <dataType name="ap_fixed&lt;12,9>" size="12"/>
-            <dataType name="ap_fixed&lt;8,8>" size="8"/>
             <dataType name="float" size="32"/>
-            <dataType name="ap_fixed&lt;16,2>" size="16"/>
         </dataTypes>
         <specialVertexOperators>
             <specialVertexOperator path="Zynq"/>
         </specialVertexOperators>
     </simuParams>
-    <parameterValues>
-        <parameter name="HEIGHT" parent="2d_idwt_float" value="288"/>
-        <parameter name="WIDTH" parent="2d_idwt_float" value="352"/>
-    </parameterValues>
+    <parameterValues/>
     <papifyConfigs xmlUrl=""/>
     <energyConfigs xmlUrl="">
         <performanceObjective objectiveEPS="0.0"/>

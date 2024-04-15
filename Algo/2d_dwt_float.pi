@@ -7,11 +7,11 @@
     <key attr.name="graph_desc" attr.type="string" for="node"/>
     <graph edgedefault="directed">
         <data key="name">2d_dwt_float</data>
-        <node expr="288" id="HEIGHT" kind="param"/>
-        <node expr="352" id="WIDTH" kind="param"/>
         <node expr="WIDTH/2" id="HALF_WIDTH" kind="param"/>
         <node expr="HEIGHT/2" id="HALF_HEIGHT" kind="param"/>
-        <node expr="5" id="FILTER_SIZE" kind="param"/>
+        <node defaultValue="5" id="FILTER_SIZE" kind="cfg_in_iface"/>
+        <node defaultValue="288" id="HEIGHT" kind="cfg_in_iface"/>
+        <node defaultValue="352" id="WIDTH" kind="cfg_in_iface"/>
         <node id="Conv_Row_High" kind="actor">
             <data key="graph_desc">Code/include/convolution.hpp</data>
             <loop isCPPdefinition="true" name="convolution_1D_row&lt;WIDTH,HEIGHT,FILTER_SIZE,input_t,filter_t,output_t>">

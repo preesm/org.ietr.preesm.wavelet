@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+    <flags>
+        <sizesAreInBit/>
+    </flags>
+    <files>
+        <algorithm url="/org.ietr.preesm.wavelet/Algo/2d_wavelet_filter_float.pi"/>
+        <architecture url="/org.ietr.preesm.wavelet/Archi/PYNQ.slam"/>
+        <codegenDirectory url="/org.ietr.preesm.wavelet/Code/generated"/>
+    </files>
+    <constraints excelUrl="">
+        <constraintGroup>
+            <operator name="Zynq"/>
+            <task name="2d_wavelet_filter_float/soft_threshold1"/>
+            <task name="2d_wavelet_filter_float/soft_threshold3"/>
+            <task name="2d_wavelet_filter_float/soft_threshold2"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Row_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Row_Low_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Col_Low_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Col_High_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Col_Low"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Col_Low_Low"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Row_High_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Col_High_Low"/>
+            <task name="2d_wavelet_filter_float/DWT/Conv_Row_Low"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Col_High"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Row_High_Low"/>
+            <task name="2d_wavelet_filter_float/DWT/Downsample_Row_Low_Low"/>
+            <task name="2d_wavelet_filter_float/DWT"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Row_High_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Image_Add"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Col_High_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Image_Add_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Col_High_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Row_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Col_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Col_Low_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Row_High_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Image_Add_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Col_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Row_Low"/>
+            <task name="2d_wavelet_filter_float/IDWT/Conv_Col_Low_High"/>
+            <task name="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_High"/>
+            <task name="2d_wavelet_filter_float/IDWT"/>
+            <task name="2d_wavelet_filter_float"/>
+        </constraintGroup>
+    </constraints>
+    <timings excelUrl="">
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/soft_threshold1"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/soft_threshold1"/>
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/soft_threshold2"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/soft_threshold2"/>
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/soft_threshold3"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/soft_threshold3"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Conv_Row_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Conv_Row_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Col_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Col_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_High_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_High_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_High_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_High_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_Low_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_Low_High"/>
+        <timing opname="FPGA" time="355"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_Low_Low"/>
+        <timing opname="FPGA" time="355"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/DWT/Downsample_Row_Low_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_High_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_High_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_Low_High"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="51437"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Col_Low_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Row_High"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Conv_Row_Low"/>
+        <timing opname="FPGA" time="102955"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Conv_Row_Low"/>
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Image_Add"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Image_Add"/>
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Image_Add_High"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Image_Add_High"/>
+        <timing opname="FPGA" time="6"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Image_Add_Low"/>
+        <timing opname="FPGA" time="1"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Image_Add_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Col_High"/>
+        <timing opname="FPGA" time="2"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Col_Low"/>
+        <timing opname="FPGA" time="2"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Col_Low"/>
+        <timing opname="FPGA" time="354"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_High_High"/>
+        <timing opname="FPGA" time="354"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_High_High"/>
+        <timing opname="FPGA" time="354"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_High_Low"/>
+        <timing opname="FPGA" time="354"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_High_Low"/>
+        <timing opname="FPGA" time="354"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_High"/>
+        <timing opname="FPGA" time="354"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_High"/>
+        <timing opname="FPGA" time="354"
+            timingtype="EXECUTION_TIME" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_Low"/>
+        <timing opname="FPGA" time="354"
+            timingtype="INITIATION_INTERVAL" vertexname="2d_wavelet_filter_float/IDWT/Upsample_Row_Low_Low"/>
+        <memcpyspeed opname="FPGA" setuptime="1" timeperunit="0.001"/>
+    </timings>
+    <simuParams>
+        <mainCore/>
+        <mainComNode/>
+        <averageDataSize>1000</averageDataSize>
+        <dataTypes>
+            <dataType name="float" size="32"/>
+        </dataTypes>
+        <specialVertexOperators>
+            <specialVertexOperator path="Zynq"/>
+        </specialVertexOperators>
+    </simuParams>
+    <parameterValues/>
+    <papifyConfigs xmlUrl=""/>
+    <energyConfigs xmlUrl="">
+        <performanceObjective objectiveEPS="0.0"/>
+        <peActorsEnergy/>
+    </energyConfigs>
+</scenario>
