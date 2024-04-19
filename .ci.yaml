@@ -1,3 +1,4 @@
 config:
-- {scenario: 2d_dwt_float.scenario, workflow: FPGAanalysis.workflow}
-- {scenario: 2d_idwt_float.scenario, workflow: FPGAanalysis.workflow}
+- {scenario: 2d_dwt_float_top.scenario, workflow: FPGAanalysis.workflow}
+- {scenario: 2d_idwt_float_top.scenario, workflow: FPGAanalysis.workflow}
+- {scenario: 2d_wavelet_filter_float.scenario, workflow: FPGAanalysis.workflow}
